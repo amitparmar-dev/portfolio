@@ -1,23 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+// import React from 'react';
+// import './index.css';
+// import Header from './Components/Header';
+// import HeroSec from './Components/HeroSec';
+// import HeroSection from './Components/HeroSection';
+// function AppContent(props) {
+//   // const classes = useStyles(); // ✅ This is safe because it is called inside ThemeProvider
+//   return (<div>
+//     <HeroSection />;
+//   </div>)
+// }
 
-function App() {
+// function App(props) {
+//   return (
+//     <ThemeProvider theme={theme}>
+//       <CssBaseline />
+//       <AppContent {...props} />
+//     </ThemeProvider>
+//   );
+// }
+
+// export default App;
+import React from 'react';
+import { ThemeProvider } from '@mui/material/styles';
+import { createTheme } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+import Header from './Components/Header';
+import HeroSec from './Components/HeroSec';
+import HeroSection from './Components/HeroSection';
+
+const theme = createTheme();
+
+function App(props) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <AppContent {...props} />
+    </ThemeProvider>
+  );
+}
+
+
+function AppContent(props) {
+  return (
+    <div>
+      <Header/>
+      <HeroSection/>;
     </div>
   );
 }
