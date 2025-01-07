@@ -1,55 +1,112 @@
 import * as React from 'react';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import {makeStyles} from '@mui/styles';
+import { makeStyles } from '@mui/styles';
 import Card from '@mui/material/Card';
 import CssBaseline from '@mui/material/CssBaseline';
 import Grid from '@mui/material/Grid2';
+import zIndex from '@mui/material/styles/zIndex';
 
 const useStyles = makeStyles((theme) => ({
-    root: {
-      backgroundColor: "#acb8bf",
-      color: theme.palette.common.white,
-      margin: "1rem",
+    container: {
+        backgroundColor: "#E2E8F0",
+        margin: "1rem 2rem",
+        borderRadius: "1rem",
+        height: "65vh",
+        [theme.breakpoints.down("sm")]: {
+            height:"40vh",
+        },
     },
-    textStyles:{
-      color: "red"
+    textStyles: {
+        color: "red"
     },
-    box: {
-      width: '200px',
-      height: '200px',
-      backgroundColor: 'blue',
-      margin: '20px',
-      padding: '20px',
-
+    imgStyle: {
+        position:'absolute',
+        bottom:0,
+        right:'15vw',
+        width:'22vw',
+        zIndex:999,
+        [theme.breakpoints.down("lg")]: {
+            minWidth:'35vw',
+        },
+        [theme.breakpoints.down("md")]: {
+            minWidth:'50vw',
+        },
+        [theme.breakpoints.down("sm")]: {
+            minWidth:'60vw',
+        },
+    },
+    brushImgStyle: {
+        position: 'absolute',
+        bottom: '0vw',
+        right: '15vw',
+        width: '50vw',
+        [theme.breakpoints.down("xl")]: {
+            maxWidth: '20vw',
+            right: '15vw',
+            bottom: '15vw',
+        },
+        [theme.breakpoints.down("lg")]: {
+            maxWidth: '28vw',
+            right: '20vw',
+            bottom: '25vw',
+        },
+        [theme.breakpoints.down("md")]: {
+            maxWidth: '35vw',
+            right: '25vw',
+            bottom: '40vw',
+        },
+        [theme.breakpoints.down("sm")]: {
+            maxWidth: '90vw',
+            bottom: '45vw',
+            right:'20vw'
+        },
+    },
+    headerText: {
+        padding:"1rem 1rem 0rem 1rem",
+        fontSize: "5rem",
+        color:'#4C4C4C',
+        [theme.breakpoints.down("sm")]: {
+            fontSize: "20px",
+        },
+        [theme.breakpoints.down("xs")]: {
+            fontSize: "1rem",
+        },
+    },
+    subHeaderText: {
+        padding:"0rem 1rem",
+        fontSize: "3rem",
+        color:'#4C4C4C',
+        [theme.breakpoints.down("sm")]: {
+            fontSize: "18px",
+        },
+        [theme.breakpoints.down("xs")]: {
+            fontSize: "1rem",
+        },
+    },
+    textGrid:{
+        [theme.breakpoints.down("sm")]: {
+            height:'10vh'
+        },
     }
-  }));
- 
-  
+}));
+
+
 const HeroSection = (props) => {
     const classes = useStyles();
     return (
-      <div className={classes.root}>
-        <h1 className={classes.textStyles}>Hello World</h1>
-        <div style={{
-          width: '200px',
-          height: '200px',
-         
-        }}>
+            <Grid container className={classes.container}>
+                {/* <Grid size={{md:4, sm:4, xs:2}} className={classes.textGrid} >
+                    <div className={classes.headerText}>Hey There,</div>
+                    <div className={classes.subHeaderText}> I'm Amit</div>
+                </Grid> */}
+                <Grid size={{md:12, sm:12, xs:12}} style={{position:'relative', overflow:'clip', zIndex:999}}>
+                        <img className={classes.imgStyle} src="./myPic.png" />
+                        <img src="../BrushStoke.png" style={{ zIndex: -1 }} className={classes.brushImgStyle} />
+                </Grid>
 
-        </div>
-        <Grid container spacing={1}>
-        <Grid size={6}>
-            <img src="./myPic.png"/>
-        
-        </Grid>
-        <Grid size={6} style={{backgroundColor:"green"}}>
-            <h1>section4</h1>
-        
-        </Grid>
-         </Grid>
-      </div>
+            </Grid>
     )
-  }
+}
 
 export default HeroSection
 
