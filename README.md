@@ -216,12 +216,13 @@ This project is open source and available under the [MIT License](LICENSE).
 
 If you have any questions or need help with customization, please:
 
-1. Check the [Issues](https://github.com/yourusername/elegant-folio-factory/issues) page
+1. Check the [Issues](https://github.com/amitparmar-dev/portfolio/issues) page
 2. Create a new issue with detailed information
 3. Contact me directly through the portfolio contact form
 
 ---
 
-**Made with ❤️ by [Your Name]**
+**Made with ❤️ by [Pratham Parmar](https://github.com/parmar-pratham)**
+
 
 *Star ⭐ this repository if you found it helpful!*
