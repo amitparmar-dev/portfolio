@@ -1,4 +1,4 @@
-# 🎨 Elegant Folio Factory
+# 🎨 Portfolio - Amit Parmar
 
 A modern, responsive portfolio website built with React, TypeScript, and Tailwind CSS. Features a beautiful hero section with portrait image, smooth scrolling navigation, and a complete mobile-responsive design.
 
@@ -226,3 +226,4 @@ If you have any questions or need help with customization, please:
 
 
 *Star ⭐ this repository if you found it helpful!*
+
